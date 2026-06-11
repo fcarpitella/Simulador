@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Proyectos Arduino - Simulador</title>
+    <!-- Vinculación del archivo de estilos externo -->
+    <link rel="stylesheet" href="estilossimuladores.css">
+</head>
+<body>
+
+    <h1>Proyectos Interactivos con Arduino</h1>
+    <p>Selecciona un ejemplo del menú para cargar el circuito y presiona el botón verde de iniciar.</p>
+    
+    <div class="selector-container">
+        <label for="proyectos-arduino">Proyecto actual:</label>
+        <select id="proyectos-arduino" onchange="actualizarSimulador()">
+            <option value="https://wokwi.com">Ejemplo 1: Led Intermitente (Blink)</option>
+            <option value="https://wokwi.com">Ejemplo 2: Semáforo con Tres Ledes</option>
+            <option value="https://wokwi.com">Ejemplo 3: Control por Pulsador</option>
+        </select>
+    </div>
+
+    <div class="contenedor-simulador">
+        <iframe id="visor-wokwi" src="https://wokwi.com"></iframe>
+    </div>
+
+    <div>
+        <a href="Simuladores.html" class="btn-volver">← Volver a Simuladores</a>
+    </div>
+
+    <script>
+        function actualizarSimulador() {
+            var lista = document.getElementById("proyectos-arduino");
+            var iframe = document.getElementById("visor-wokwi");
+            iframe.src = lista.value;
+        }
+    </script>
+
+</body>
+</html>
